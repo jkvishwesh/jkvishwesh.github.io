@@ -93,7 +93,13 @@ const goTo = (type) => {
     </div>
   </div>
   <RootTemplate class="my_portfolio">
-    <DeveloperPicture class="dev_pic" width="30vw" :isSvg="true" />
+    <DeveloperPicture
+      class="dev_picture"
+      sdWidth="80vw"
+      mdWidth="60vw"
+      ldWidth="30vw"
+      :isSvg="true"
+    />
     <div class="dev_details">
       <div class="dev_title wobble mb-3">
         <span class="dev_greet">Hello, I'm</span>
@@ -153,7 +159,7 @@ const goTo = (type) => {
     text-align: center;
   }
 
-  .dev_pic {
+  .dev_picture {
     width: 40%;
   }
 
@@ -197,7 +203,7 @@ const goTo = (type) => {
     padding: 2%;
     padding-bottom: 2rem;
 
-    .dev_pic {
+    .dev_picture {
       width: 60%;
       margin: auto;
     }
@@ -223,7 +229,7 @@ const goTo = (type) => {
     padding: 1%;
     padding-bottom: 2rem;
 
-    .dev_pic,
+    .dev_picture,
     .dev_details {
       width: 80%;
     }

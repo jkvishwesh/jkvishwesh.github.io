@@ -1,4 +1,5 @@
 <script setup>
+import { ref, onMounted, onUnmounted } from 'vue'
 import { classNames } from '@src/utils/globals.js'
 import MasterIcon from '@components/MasterIcon.vue'
 import MasterImage from '@components/MasterImage.vue'
@@ -13,7 +14,15 @@ const props = defineProps({
     default: false,
     type: Boolean
   },
-  width: {
+  sdWidth: {
+    default: '50%',
+    type: String
+  },
+  mdWidth: {
+    default: '50%',
+    type: String
+  },
+  ldWidth: {
     default: '50%',
     type: String
   },
@@ -23,8 +32,34 @@ const props = defineProps({
   }
 })
 
+const windowSize = ref(window.innerWidth)
+const width = ref(0)
+onMounted(() => {
+  window.addEventListener('resize', () => {
+    windowSize.value = window.innerWidth
+  })
+})
+
+onUnmounted(() => {
+  window.removeEventListener('resize', () => {
+    windowSize.value = window.innerWidth
+  })
+})
+
+if (windowSize.value < 600) {
+  width.value = props.sdWidth
+}
+
+if (windowSize.value > 600 && windowSize.value < 960) {
+  width.value = props.mdWidth
+}
+
+if (windowSize.value > 960) {
+  width.value = props.ldWidth
+}
+
 const getClasses = () => {
-  const classList = ['dev-picture']
+  const classList = ['user-picture']
 
   if (props.titleText) {
     classList.push('has_title')
@@ -63,7 +98,7 @@ const getClasses = () => {
 </template>
 
 <style lang="scss" scoped>
-.dev-picture {
+.user-picture {
   position: relative;
   display: flex;
   align-items: center;

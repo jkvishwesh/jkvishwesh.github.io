@@ -1,0 +1,42 @@
+{
+  "name": "jkvishwesh.github.io",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "clean": "rimraf ./node_modules",
+    "clean:dist": "rimraf ./dist",
+    "build": "vite build && cd ./dist && cp index.html 404.html",
+    "preview": "vite preview",
+    "test:unit": "vitest",
+    "lint": "eslint . --fix",
+    "format": "prettier --write src/",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "disable-devtool": "^0.3.8",
+    "jkvishwesh.github.io": "file:",
+    "pinia": "^2.2.4",
+    "vue": "^3.4.38",
+    "vue-router": "^4.4.5"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.12.0",
+    "@rushstack/eslint-patch": "^1.10.4",
+    "@vitejs/plugin-vue": "^5.1.4",
+    "@vue/eslint-config-prettier": "^10.0.0",
+    "@vue/test-utils": "^2.4.6",
+    "eslint": "^9.12.0",
+    "eslint-plugin-vue": "^9.28.0",
+    "globals": "^15.11.0",
+    "husky": "^9.1.6",
+    "jsdom": "^25.0.1",
+    "prettier": "^3.3.3",
+    "rimraf": "^5.0.10",
+    "sass": "^1.79.4",
+    "vite": "^5.4.8",
+    "vite-svg-loader": "^5.1.0",
+    "vitest": "^2.1.2"
+  }
+}

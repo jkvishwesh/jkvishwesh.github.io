@@ -47,7 +47,6 @@ const toContact = () => {
 }
 
 const skillsContent = () => {
-  
   const skillsList = devSkills.reduce((acc, skill, idx) => {
     if (idx !== 0) {
       acc += ', ' + skill

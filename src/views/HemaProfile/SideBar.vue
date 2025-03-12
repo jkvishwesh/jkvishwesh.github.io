@@ -57,13 +57,13 @@ const devEducation = [
 ]
 
 const devHobbies = [
-    { iName: 'Gaming', iValue: 'gaming', iconName: 'gaming' },
-    { iName: 'Cinema', iValue: 'cinema', iconName: 'cinema-round' },
-    { iName: 'Music', iValue: 'music', iconName: 'music' },
-    { iName: 'Travelling', iValue: 'travelling', iconName: 'holidays-travel' },
-    { iName: 'Exercise', iValue: 'exercise', iconName: 'exercise' },
-    { iName: 'Browsing', iValue: 'browsing', iconName: 'website' }
-  ]
+  { iName: 'Gaming', iValue: 'gaming', iconName: 'gaming' },
+  { iName: 'Cinema', iValue: 'cinema', iconName: 'cinema-round' },
+  { iName: 'Music', iValue: 'music', iconName: 'music' },
+  { iName: 'Travelling', iValue: 'travelling', iconName: 'holidays-travel' },
+  { iName: 'Exercise', iValue: 'exercise', iconName: 'exercise' },
+  { iName: 'Browsing', iValue: 'browsing', iconName: 'website' }
+]
 </script>
 
 <template>

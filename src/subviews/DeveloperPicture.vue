@@ -3,7 +3,6 @@ import { ref, onMounted, onUnmounted } from 'vue'
 import { classNames } from '@src/utils/globals.js'
 import MasterIcon from '@components/MasterIcon.vue'
 import MasterImage from '@components/MasterImage.vue'
-import DevPic from '@assets/images/vishu.png'
 
 const props = defineProps({
   titleText: {
@@ -27,6 +26,18 @@ const props = defineProps({
     type: String
   },
   isSvg: {
+    default: false,
+    type: Boolean
+  },
+  svgName: {
+    default: 'user',
+    type: String
+  },
+  imageName: {
+    default: '',
+    type: String
+  },
+  hasBorder: {
     default: false,
     type: Boolean
   }
@@ -79,7 +90,7 @@ const getClasses = () => {
     <MasterIcon
       v-if="isSvg"
       class="dev_pic"
-      svgName="vishu"
+      :svgName="svgName"
       :size="width"
       title="Vishweshwarayya Kj"
       fillColor="var(--primary-icon)"
@@ -88,8 +99,8 @@ const getClasses = () => {
     <MasterImage
       v-else
       class="dev_pic"
-      hasBorder
-      :image="DevPic"
+      :hasBorder="hasBorder"
+      :image="imageName"
       :width="width"
       altText="Vishweshwarayya Kj"
     />

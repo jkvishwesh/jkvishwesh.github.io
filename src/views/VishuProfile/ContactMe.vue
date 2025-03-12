@@ -7,7 +7,7 @@ const contact = '+91-7353333573'
 
 <template>
   <RootTemplate class="contact_me">
-    <DeveloperPicture :titleText="devName" width="20vw" :isSvg="true" />
+    <DeveloperPicture :titleText="devName" width="20vw" :isSvg="true" svgName="vishu" />
     <h4 class="mb-3">Call me on</h4>
     <h1>{{ contact }}</h1>
   </RootTemplate>

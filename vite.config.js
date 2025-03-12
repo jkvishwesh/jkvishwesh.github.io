@@ -23,6 +23,10 @@ export default defineConfig({
         replacement: fileURLToPath(new URL('./src/assets', import.meta.url))
       },
       {
+        find: '@views',
+        replacement: fileURLToPath(new URL('./src/views', import.meta.url))
+      },
+      {
         find: '@components',
         replacement: fileURLToPath(new URL('./src/components', import.meta.url))
       }
@@ -31,12 +35,14 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
+        quietDeps: true,
+        silentDeprecation: true,
         api: 'modern-compiler',
         additionalData: `
-            @import "@assets/styles/_fonts.scss";
-            @import "@assets/styles/_variables.scss";
-            @import "@assets/styles/_keyframes.scss";
-            @import "@assets/styles/_mixins.scss";
+            @use "@assets/styles/_fonts.scss" as *;
+            @use "@assets/styles/_keyframes.scss" as *;
+            @use "@assets/styles/_mixins.scss" as *;
+            @use "@assets/styles/_variables.scss" as *;
           `
       }
     }

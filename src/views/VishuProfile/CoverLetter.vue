@@ -30,7 +30,7 @@ if (device === 'mobile') {
 <template>
   <MasterTemplate class="cover_letter">
     <template #sidebar>
-      <DeveloperPicture :hasTriangle="true" :isSvg="true" :width="devPicWidth" />
+      <DeveloperPicture :hasTriangle="true" :isSvg="true" svgName="vishu" :width="devPicWidth" />
       <DeveloperContact :devContact="devContact" sectionTitle="Contact" />
     </template>
     <template #content>

@@ -1,23 +1,16 @@
 {
-    "compilerOptions": {
-        "target": "ESNext",
-        "module": "ESNext",
-        "strict": true,
-        "allowJs": true,
-        "baseUrl": "./",
-        "paths": {
-            "@components/*": [
-                "./src/components"
-            ],
-            "@assets/*": [
-                "./src/assets"
-            ],
-            "@src/*": [
-                "./src/*"
-            ],
-            "@/*": [
-                "./*"
-            ]
-        }
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "strict": true,
+    "allowJs": true,
+    "baseUrl": "./",
+    "paths": {
+      "@components/*": ["./src/components/*"],
+      "@views/*": ["./src/views/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@src/*": ["./src/*"],
+      "@/*": ["./*"]
     }
+  }
 }

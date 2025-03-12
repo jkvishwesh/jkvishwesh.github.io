@@ -1,9 +1,9 @@
 <template>
   <main class="main_template">
-    <div class="main_sidebar">
+    <div class="main__sidebar">
       <slot name="sidebar"> </slot>
     </div>
-    <div class="main_content">
+    <div class="main__content">
       <slot name="content"></slot>
     </div>
   </main>
@@ -21,13 +21,13 @@
     height: auto;
   }
   .main {
-    &_sidebar {
+    &__sidebar {
       @include commonCode();
       background: var(--sidebar-bg-color);
       color: var(--sidebar-txt-color);
     }
 
-    &_content {
+    &__content {
       @include commonCode();
       background: var(--bg-color);
       color: var(--item-color);
@@ -40,8 +40,8 @@
     grid-template-columns: 1fr;
 
     .main {
-      &_sidebar,
-      &_content {
+      &__sidebar,
+      &__content {
         width: calc(100vw);
       }
     }

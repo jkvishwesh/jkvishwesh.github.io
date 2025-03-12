@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { openLink } from '@src/utils/globals.js'
-import { linkedIn, github, themesList } from '@src/utils/constants.js'
+import { linkedIn, github, themesList, aboutContent, skillsText } from '@src/utils/constants.js'
 import useSkillsStore from '@src/stores/skills.js'
 import DeveloperPicture from '@src/subviews/DeveloperPicture.vue'
 import RootTemplate from '@src/subviews/RootTemplate.vue'
@@ -47,12 +47,8 @@ const toContact = () => {
 }
 
 const skillsContent = () => {
-  const aboutContent =
-    "I'm a Frontend heavy full-stack developer based in Bengaluru. I'm passionate about creating cutting-edge, pixel-perfect, beautiful user interfaces."
-
-  const text = 'Some of my skills includes'
-
-  const skillsText = devSkills.reduce((acc, skill, idx) => {
+  
+  const skillsList = devSkills.reduce((acc, skill, idx) => {
     if (idx !== 0) {
       acc += ', ' + skill
     } else {
@@ -61,7 +57,7 @@ const skillsContent = () => {
     return acc
   })
 
-  return aboutContent + ' ' + text + ' ' + skillsText
+  return aboutContent + ' ' + skillsText + ' ' + skillsList
 }
 
 const goTo = (type) => {
@@ -99,6 +95,7 @@ const goTo = (type) => {
       mdWidth="60vw"
       ldWidth="30vw"
       :isSvg="true"
+      svgName="vishu"
     />
     <div class="dev_details">
       <div class="dev_title wobble mb-3">

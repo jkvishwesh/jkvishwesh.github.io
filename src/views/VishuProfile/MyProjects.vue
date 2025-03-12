@@ -1,25 +1,23 @@
 <script setup>
 import { ref } from 'vue'
 import { findWindowSize } from '@src/utils/globals.js'
-import useExperiencesStore from '@src/stores/experiences.js'
-import useAboutDevStore from '@src/stores/aboutdev.js'
 import DeveloperTitle from '@src/subviews/DeveloperTitle.vue'
 import MasterTemplate from '@src/subviews/MasterTemplate.vue'
-import WorkExperience from '@src/subviews/WorkExperience.vue'
 import DeveloperPicture from '@src/subviews/DeveloperPicture.vue'
-import AboutDeveloper from '@src/subviews/AboutDeveloper.vue'
-import PersonalDetails from '@src/subviews/PersonalDetails.vue'
-import DutyRoles from '@src/subviews/DutyRoles.vue'
+import DeveloperContact from '@src/subviews/DeveloperContact.vue'
+import ProjectsGrid from '@src/subviews//ProjectsGrid.vue'
+import useContactStore from '@src/stores/contact.js'
+import useExperiencesStore from '@src/stores/experiences'
 
-const aboutDev = useAboutDevStore()
-const aboutDevData = aboutDev.getAboutDev
+const contact = useContactStore()
+const devContact = contact.getContact
 
 const experiences = useExperiencesStore()
-const experiencesData = experiences.getExperiences
+const orgsList = experiences.getExperiences
 
 const subTitle = 'Senior Fullstack Developer'
 const devTitle = 'Vishweshwarayya K J'
-const sectionTitle = 'Work Experience'
+const sectionTitle = 'Projects'
 
 const devPicWidth = ref('')
 const device = findWindowSize()
@@ -35,16 +33,20 @@ if (device === 'mobile') {
 </script>
 
 <template>
-  <MasterTemplate class="my_resume">
+  <MasterTemplate class="worked_projects">
     <template #sidebar>
-      <DeveloperPicture :hasTriangle="true" :isSvg="true" :width="devPicWidth" />
-      <PersonalDetails />
+      <DeveloperPicture :hasTriangle="true" :isSvg="true" svgName="vishu" :width="devPicWidth" />
+      <DeveloperContact :devContact="devContact" sectionTitle="Contact" />
     </template>
     <template #content>
-      <AboutDeveloper :content="aboutDevData" />
       <DeveloperTitle :title="devTitle" :subtitle="subTitle" />
-      <WorkExperience :sectionTitle="sectionTitle" :workExpList="experiencesData" />
-      <DutyRoles />
+      <ProjectsGrid :orgsList="orgsList" :sectionTitle="sectionTitle" />
     </template>
   </MasterTemplate>
 </template>
+
+<style>
+.worked_projects {
+  display: block;
+}
+</style>

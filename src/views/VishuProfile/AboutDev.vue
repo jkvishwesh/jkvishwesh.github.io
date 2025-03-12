@@ -7,6 +7,6 @@ const devName = 'Vishweshwarayya Kj'
 
 <template>
   <RootTemplate class="about_dev">
-    <DeveloperPicture :titleText="devName" width="30vw" :isSvg="true" />
+    <DeveloperPicture :titleText="devName" width="30vw" :isSvg="true" svgName="vishu" />
   </RootTemplate>
 </template>

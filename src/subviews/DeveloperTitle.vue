@@ -9,15 +9,19 @@ defineProps({
   subtitle: {
     default: '',
     type: String
+  },
+  showExperience: {
+    default: true,
+    type: Boolean
   }
 })
 </script>
 
 <template>
   <div class="master_title section_title">
-    <h1 class="title">{{ title }}</h1>
-    <h4 class="subtitle">{{ subtitle }}</h4>
-    <h4 class="exp_years">From Past <TotalExperience /></h4>
+    <h1 class="title border__bottom">{{ title }}</h1>
+    <h4 class="subtitle border__bottom">{{ subtitle }}</h4>
+    <h4 v-if="showExperience" class="exp_years border__bottom">From Past <TotalExperience /></h4>
   </div>
 </template>
 
@@ -41,8 +45,14 @@ defineProps({
   .subtitle {
     font-size: 2.5vw;
     padding: 0.625rem 0;
-    border-top: px2rem(2) solid var(--item-color);
+  }
+
+  .border__bottom {
     border-bottom: px2rem(2) solid var(--item-color);
+
+    &:last-child {
+      border-bottom: none;
+    }
   }
 
   .exp_years {

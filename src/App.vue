@@ -1,6 +1,6 @@
 <script setup>
 import { RouterView } from 'vue-router'
-import FloatingMenu from '@src/views/FloatingMenu.vue'
+import FloatingMenu from '@src/views/VishuProfile/FloatingMenu.vue'
 import MasterScrollto from '@components/MasterScrollto.vue'
 </script>
 

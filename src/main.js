@@ -1,5 +1,5 @@
-import '@assets/index.scss'
 import '@src/utils/prototypes.js'
+import '@assets/index.scss'
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
@@ -9,7 +9,11 @@ import router from '@src/router'
 
 import DisableDevtool from 'disable-devtool'
 
-DisableDevtool()
+if (import.meta.env.DEV) {
+  console.log('Development mode')
+} else {
+  DisableDevtool()
+}
 
 const app = createApp(App)
 

@@ -1,18 +1,25 @@
 <script setup>
 import DeveloperSkills from '@src/subviews/DeveloperSkills.vue'
 import DeveloperContact from '@src/subviews/DeveloperContact.vue'
-import DeveloperEducation from '@src/subviews/DeveloperEducation.vue'
 import DeveloperSocials from '@src/subviews/DeveloperSocials.vue'
 import DeveloperHobbies from '@src/subviews/DeveloperHobbies.vue'
 
 const devSkills = [
-  'Selenium',
-  'JUnit',
-  'TestNG',
+  'SDLC & STLC',
+  'Manual & Automation Testing',
+  'SoapUI',
+  'Postman',
   'Java',
-  'Python',
+  'API testing',
+  'Jenkins',
+  'JIRA',
   'SQL',
-  'Manual & Automation Testing'
+  'TestNG',
+  'Git',
+  'Test Plan & Test Case Creation',
+  'Test Execution & Reporting',
+  'Defect Tracking & Reporting',
+  'Agile Methodologies'
 ]
 
 const devContact = [
@@ -36,33 +43,28 @@ const devContact = [
 const devSocials = [
   {
     iName: 'LinkedIn',
-    iValue: 'https://www.linkedin.com/in/hema-s-j-525370167/',
+    iValue: 'www.linkedin.com/in/hemavish',
     iconName: 'lkdin-round'
-  }
-]
-
-const devEducation = [
-  {
-    year: '2019-2021',
-    institute: 'Sri Venkateshwara College of Engineering',
-    location: 'Bengaluru',
-    name: 'Bachelor of Engineering in Computer Science'
   },
   {
-    year: '2005-2006',
-    institute: 'Sangolli Rayanna MR School',
-    location: 'Nandagad',
-    name: 'Secondary School'
+    iName: 'Instagram',
+    iValue: 'https://www.instagram.com/hemavish_6518',
+    iconName: 'insta-round'
+  },
+  {
+    iName: 'Facebook',
+    iValue: 'https://www.facebook.com/profile.php?id=100015237851350',
+    iconName: 'fb-round'
   }
 ]
 
 const devHobbies = [
-  { iName: 'Gaming', iValue: 'gaming', iconName: 'gaming' },
+  { iName: 'Dancing', iValue: 'dancing', iconName: 'dancing' },
+  { iName: 'Cooking', iValue: 'cooking', iconName: 'cooking' },
   { iName: 'Cinema', iValue: 'cinema', iconName: 'cinema-round' },
   { iName: 'Music', iValue: 'music', iconName: 'music' },
   { iName: 'Travelling', iValue: 'travelling', iconName: 'holidays-travel' },
-  { iName: 'Exercise', iValue: 'exercise', iconName: 'exercise' },
-  { iName: 'Browsing', iValue: 'browsing', iconName: 'website' }
+  { iName: 'Exercise', iValue: 'exercise', iconName: 'exercise' }
 ]
 </script>
 
@@ -71,7 +73,6 @@ const devHobbies = [
     <DeveloperContact :devContact="devContact" sectionTitle="Contact" />
     <DeveloperSocials :devSocials="devSocials" sectionTitle="Social Media" />
     <DeveloperSkills :devSkills="devSkills" sectionTitle="Skills" />
-    <DeveloperEducation :devEducation="devEducation" sectionTitle="Education" />
     <DeveloperHobbies :devHobbies="devHobbies" sectionTitle="Hobbies" />
   </div>
 </template>

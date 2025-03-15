@@ -1,10 +1,9 @@
 <script setup>
 import MasterIcon from '@components/MasterIcon.vue'
 import MasterHrLine from '@components/MasterHrLine.vue'
-import DetailsBadge from '@src/subviews/DetailsBadge.vue'
 
 const props = defineProps({
-  devEducation: {
+  devCertificates: {
     default: () => [],
     type: Array
   },
@@ -22,9 +21,9 @@ const iconColor = props.isMainContent ? 'var(--primary-icon)' : 'var(--secondary
 const iconHoverColor = props.isMainContent ? 'var(--themed-icon)' : 'var(--themed-icon)'
 const hrColor = props.isMainContent ? 'var(--glob-dark)' : 'var(--glob-light)'
 
-const educationClass = props.isMainContent
-  ? 'education_details education_main'
-  : 'education_details education_sidebar'
+const certificationsClass = props.isMainContent
+  ? 'certifications_details certifications_main'
+  : 'certifications_details certifications_sidebar'
 
 const instituteClass = props.isMainContent
   ? 'strong x-medium-text normal'
@@ -32,7 +31,7 @@ const instituteClass = props.isMainContent
 </script>
 
 <template>
-  <div class="personal_details dev_education">
+  <div class="personal_details dev_certifications">
     <div class="flex-between">
       <h3 class="section_title">{{ sectionTitle }}</h3>
       <MasterIcon
@@ -43,18 +42,9 @@ const instituteClass = props.isMainContent
       />
     </div>
     <MasterHrLine thickness="1px" :hrColor="hrColor" />
-    <div class="education_line" v-for="(line, i) in devEducation" :key="i">
-      <label class="passed_year">
-        <DetailsBadge
-          class="year"
-          :content="line.year"
-          textColor="var(--bg-color)"
-          bgColor="var(--secondary)"
-          svgName="school-college"
-        />
-      </label>
-      <div :class="educationClass">
-        <div class="strong education_name">{{ line.name }}</div>
+    <div class="certifications_line" v-for="(line, i) in devCertificates" :key="i">
+      <div :class="certificationsClass">
+        <div class="strong certification_name">{{ line.name }}</div>
         <div class="institute_details">
           <div :class="`${instituteClass} institute_name`">
             <MasterIcon
@@ -82,10 +72,10 @@ const instituteClass = props.isMainContent
 </template>
 
 <style lang="scss" scoped>
-.dev_education .education_line {
+.dev_certifications .certifications_line {
   padding-left: px2rem(5);
 
-  .education_name {
+  .certification_name {
     margin-bottom: px2rem(10);
   }
 

@@ -5,8 +5,32 @@ const useExperiencesStore = defineStore('experiences', () => {
   const experiences = ref([
     {
       exp_details: {
-        from: 'Oct 2021',
+        from: 'Dec 2024',
         to: 'Present',
+        type: 'Full-Time'
+      },
+      job_title: 'Principle Software Engineer',
+      job_company: 'Cadence Design Systems',
+      job_location: 'Bengaluru, Karnataka',
+      work_description:
+        "Working on a Design system project that solves and minimizes design issues throughout the firm. I'm also responsible to mentor junior developers and interns.",
+      print_break: false,
+      print_margin: false,
+      projects_list: [
+        {
+          project_name: 'Cerebrus AI Studio',
+          project_description:
+            "It's a Design system project that solves and minimizes design issues throughout the firm.",
+          work_skills: ['ReactJS', 'JavaScript', 'TypeScript', 'HTML5', 'CSS3', 'Python', 'NodeJS'],
+          project_link: 'internal',
+          isProject: true
+        }
+      ]
+    },
+    {
+      exp_details: {
+        from: 'Oct 2021',
+        to: 'Dec 2024',
         type: 'Full-Time'
       },
       job_title: 'Sr. Associate',

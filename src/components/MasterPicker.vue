@@ -285,13 +285,10 @@ const updateInputStr = (e) => {
   const hrs = padZero(selectedTime.value.hrs)
   const mins = padZero(selectedTime.value.mins)
   const type = selectedTime.value.type
-  let finalDateTime = ''
   const withoutTime = `${dateObj.value?.fullDate}`
-  if (isDateTimePicker.value) {
-    finalDateTime = `${withoutTime} ${hrs}:${mins} ${type}`
-  } else {
-    finalDateTime = `${withoutTime} 12:00 AM`
-  }
+  const finalDateTime = isDateTimePicker.value
+    ? `${withoutTime} ${hrs}:${mins} ${type}`
+    : `${withoutTime} 12:00 AM`
   selectedDate.value = finalDateTime
   dateRef.value = new Date(finalDateTime)
   defaultSel.value = new Date(finalDateTime)
